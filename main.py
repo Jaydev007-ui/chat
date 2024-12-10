@@ -3,7 +3,7 @@ from groq import Groq
 import requests
 
 # Groq API setup
-client = Groq(api_key="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")
+client = Groq(api_key="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")
 
 # GitHub setup
 username = "Jaydev007-ui"
