@@ -1,5 +1,5 @@
-streamlit==1.25.0
-speechrecognition==3.8.1
-pyttsx3==2.90
+streamlit
+speechrecognition
+pyttsx3
 groq
-gitpython==3.1.36
+gitpython
