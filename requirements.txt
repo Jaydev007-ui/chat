@@ -1,6 +1,5 @@
-Flask
-pyttsx3
-groq
-GitPython
-streamlit
-PyGithub
+Flask==2.3.3
+pyttsx3==2.90
+groq==0.0.1  # Ensure correct version for your Groq integration
+streamlit==1.25.0
+PyGithub==1.58.1
