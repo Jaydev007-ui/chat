@@ -4,4 +4,4 @@ groq
 GitPython
 streamlit
 PyGithub
-eSpeak-ng
+eSpeak
