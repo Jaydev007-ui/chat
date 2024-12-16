@@ -7,7 +7,7 @@ import os
 
 # Initialize the Flask app
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'  # Add a secret key for session management
+app.secret_key = 'Zala_@_0007'  # Add a secret key for session management
 
 # Initialize the speech engine for Jarvis voice
 engine = pyttsx3.init()
