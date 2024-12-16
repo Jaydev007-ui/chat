@@ -9,8 +9,8 @@ import os
 app = Flask(__name__)
 app.secret_key = 'Zala_@_0007'  # Add a secret key for session management
 
-# Initialize pyttsx3 for eSpeak (Linux)
-engine = pyttsx3.init(driverName='espeak')  # Ensure eSpeak is installed for Linux
+# Initialize pyttsx3 for Windows (SAPI5 engine)
+engine = pyttsx3.init(driverName='sapi5')  # SAPI5 is the default TTS engine for Windows
 
 # Adjust speech properties
 engine.setProperty('rate', 150)  # Adjust speech rate
