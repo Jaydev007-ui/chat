@@ -4,4 +4,3 @@ groq
 GitPython
 streamlit
 PyGithub
-espeak
