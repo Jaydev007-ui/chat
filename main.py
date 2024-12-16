@@ -9,9 +9,10 @@ import os
 app = Flask(__name__)
 app.secret_key = 'Zala_@_0007'  # Add a secret key for session management
 
+# Initialize pyttsx3 for eSpeak (Linux)
+engine = pyttsx3.init(driverName='espeak')  # Ensure eSpeak is installed for Linux
 
-engine = pyttsx3.init(driverName='espeak')  # For Linux users
-
+# Adjust speech properties
 engine.setProperty('rate', 150)  # Adjust speech rate
 engine.setProperty('volume', 1)  # Adjust volume (0.0 to 1.0)
 engine.say("Hello, this is Jarvis speaking!")
