@@ -1,5 +1,6 @@
 Flask
-streamlit
 pyttsx3
-github
 groq
+GitPython
+streamlit
+
