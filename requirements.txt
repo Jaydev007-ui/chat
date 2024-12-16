@@ -3,4 +3,3 @@ pyttsx3
 groq
 streamlit
 PyGithub
-espeak
