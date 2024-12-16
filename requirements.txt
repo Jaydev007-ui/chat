@@ -3,4 +3,4 @@ pyttsx3
 groq
 GitPython
 streamlit
-
+PyGithub
