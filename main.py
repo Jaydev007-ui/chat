@@ -85,7 +85,7 @@ def send_message():
 
 # Streamlit integration
 def streamlit_app():
-    st.image("TSS.jpg", width=200)  # Display the logo
+    st.image("TSS.png", width=200)  # Display the logo
     st.title("Jarvis Chat with Groq Integration")
     
     # Login section
