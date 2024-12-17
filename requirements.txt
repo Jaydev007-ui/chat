@@ -1,6 +1,5 @@
-Flask
-pyttsx3
-groq
 streamlit
-PyGithub
-comtypes
+pyttsx3
+requests
+github3.py
+gtts
