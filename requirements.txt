@@ -2,3 +2,4 @@ streamlit
 pyttsx3
 transformers
 gTTS
+torch
