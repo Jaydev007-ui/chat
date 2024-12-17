@@ -1,12 +1,7 @@
-import speech_recognition as sr
-from groq import Groq
 import streamlit as st
+from groq import Groq
 from github import Github
 import os
-
-# Initialize the speech recognition module
-recognizer = sr.Recognizer()
-mic = sr.Microphone()
 
 # Initialize Groq API client
 client = Groq(api_key="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")
@@ -14,22 +9,6 @@ client = Groq(api_key="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"
 # Initialize GitHub client
 g = Github("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")
 repo = g.get_user().get_repo("Chat")
-
-# Function to capture voice input
-def recognize_speech():
-    with mic as source:
-        recognizer.adjust_for_ambient_noise(source)
-        print("Listening...")
-        audio = recognizer.listen(source)
-    
-    try:
-        user_input = recognizer.recognize_google(audio)
-        print(f"Recognized: {user_input}")
-        return user_input
-    except sr.UnknownValueError:
-        return "Sorry, I did not understand that."
-    except sr.RequestError:
-        return "Sorry, I'm having trouble connecting to Google's service."
 
 # Streamlit integration
 def streamlit_app():
@@ -52,17 +31,9 @@ def streamlit_app():
             else:
                 st.error("Invalid credentials")
     else:
-        # Voice command control
-        voice_enabled = st.checkbox("Enable voice command")
-
-        if voice_enabled:
-            st.write("Click the button and speak to Jarvis.")
-            if st.button("Record Voice"):
-                user_message = recognize_speech()
-                st.write(f"You said: {user_message}")
-        else:
-            user_message = st.text_input("Your Message")
-
+        # Chat interface
+        user_message = st.text_input("Your Message")
+        
         if st.button("Send Message"):
             if user_message:
                 # Process the user input with Groq
