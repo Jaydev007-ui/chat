@@ -3,4 +3,3 @@ streamlit
 PyGithub
 speechrecognition
 pyaudio
-sounddevice
