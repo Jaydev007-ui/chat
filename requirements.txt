@@ -1,5 +1,6 @@
 streamlit
 pyttsx3
 requests
-github
+github3.py
 gtts
+aiohttp==3.8.1
