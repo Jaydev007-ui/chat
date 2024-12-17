@@ -1,17 +1,18 @@
 import streamlit as st
-import pyttsx3
+from gtts import gTTS
+from io import BytesIO
 from transformers import pipeline
-
-# Initialize the TTS engine
-engine = pyttsx3.init()
 
 # Set up the chatbot model
 chatbot = pipeline("conversational", model="microsoft/DialoGPT-medium")
 
-# Function for text-to-speech
+# Function for text-to-speech using gTTS
 def speak(text):
-    engine.say(text)
-    engine.runAndWait()
+    tts = gTTS(text=text, lang='en')
+    audio_file = BytesIO()
+    tts.save(audio_file)
+    audio_file.seek(0)
+    return audio_file
 
 # Streamlit UI
 st.title("Chatbot with Text-to-Speech")
@@ -25,9 +26,10 @@ user_input = st.text_input("You: ")
 if user_input:
     # Generate response from the chatbot
     response = chatbot(user_input)[0]['generated_text']
-    
+
     # Display the chatbot's response
     st.write(f"Bot: {response}")
-    
-    # Speak the chatbot's response
-    speak(response)
+
+    # Generate TTS and play the response
+    audio_file = speak(response)
+    st.audio(audio_file, format="audio/mp3")
