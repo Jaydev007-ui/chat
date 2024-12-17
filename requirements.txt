@@ -3,3 +3,4 @@ pyttsx3
 groq
 streamlit
 PyGithub
+comtypes
