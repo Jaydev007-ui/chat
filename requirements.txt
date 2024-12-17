@@ -2,4 +2,4 @@ streamlit
 pyttsx3
 transformers
 gTTS
-tensorflow==2.10.0
+tensorflow
