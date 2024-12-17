@@ -4,7 +4,7 @@ from io import BytesIO
 from transformers import pipeline
 
 # Set up the chatbot model
-chatbot = pipeline("conversational", model="microsoft/DialoGPT-medium")
+chatbot = pipeline("text-generation", model="microsoft/DialoGPT-medium")
 
 # Function for text-to-speech using gTTS
 def speak(text):
