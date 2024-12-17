@@ -1,17 +1,14 @@
-import pyttsx3
-import requests
 import streamlit as st
+from gtts import gTTS
+import os
+import requests
 from github import Github
 
-# Initialize pyttsx3 for TTS
-engine = pyttsx3.init(driverName='espeak')  # Use 'espeak' for Linux
-engine.setProperty('rate', 150)  # Adjust speech rate
-engine.setProperty('volume', 1)  # Adjust volume (0.0 to 1.0)
-
-# Function to make Jarvis speak
+# Function to make Jarvis speak using gTTS
 def jarvis_speak(text):
-    engine.say(text)
-    engine.runAndWait()
+    tts = gTTS(text=text, lang='en')
+    tts.save("response.mp3")
+    st.audio("response.mp3")  # Streamlit plays the mp3 file directly
 
 # Initialize GitHub client
 g = Github("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")
@@ -45,8 +42,7 @@ def streamlit_app():
         user_message = st.text_input("Your Message")
         if st.button("Send Message"):
             if user_message:
-                # Simulate Groq API call (since we no longer have Flask or real API integration here)
-                # You can replace this with an actual API call or local processing logic
+                # Simulate Groq API call (replace this with real logic or API call if needed)
                 response = simulate_groq_response(user_message)
 
                 # Display the response in the Streamlit app
