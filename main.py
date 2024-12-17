@@ -39,6 +39,7 @@ def streamlit_app():
     # Login section
     if 'logged_in' not in st.session_state:
         st.session_state.logged_in = False
+        st.session_state.chat_history = []  # Store chat history in session state
     
     if not st.session_state.logged_in:
         st.subheader("Login")
@@ -88,8 +89,16 @@ def streamlit_app():
                 for chunk in completion:
                     response += chunk.choices[0].delta.content or ""
 
-                st.write(f"Jarvis: {response}")
-                
+                # Update chat history
+                st.session_state.chat_history.append((user_message, response))
+
+                # Display chat history
+                st.write("Chat History:")
+                for i, (msg, resp) in enumerate(st.session_state.chat_history):
+                    st.write(f"**You:** {msg}")
+                    st.write(f"**Jarvis:** {resp}")
+                    st.write("---")
+
                 # Save the interaction to GitHub
                 repo.create_file(f"logs/{user_message[:10]}.txt", "Added message log", f"Message: {user_message}\nResponse: {response}")
             else:
