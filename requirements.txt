@@ -1,5 +1,5 @@
 streamlit
 pyttsx3
 requests
-github3.py
+github
 gtts
