@@ -8,7 +8,7 @@ client = Groq(api_key="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"
 
 # Initialize GitHub client
 g = Github("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")
-repo = g.get_user().get_repo("Chat")
+repo = g.get_user().get_repo("chat")
 
 # Streamlit integration
 def streamlit_app():
