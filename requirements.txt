@@ -2,3 +2,4 @@ groq
 streamlit
 PyGithub
 speechrecognition
+pyaudio
